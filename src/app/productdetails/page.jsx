@@ -8,21 +8,22 @@ import Footer from "../_componant/Footer";
 function Details({ searchParams }) {
   const [detailsPro, setDetailsPro] = useState();
   useEffect(() => {
-    async function getDetails() {
-      const refPro = doc(
-        db,
-        "category",
-        searchParams.catId,
-        "product",
-        searchParams.proId
-      );
-      const docRef = await getDoc(refPro);
-      setDetailsPro(docRef.data());
+    if (searchParams?.catId && searchParams?.proId) {
+      async function getDetails() {
+        const refPro = doc(
+          db,
+          "category",
+          searchParams.catId,
+          "product",
+          searchParams.proId
+        );
+        const docRef = await getDoc(refPro);
+        setDetailsPro(docRef.data());
+      }
+      getDetails();
     }
-    getDetails();
   }, [searchParams.catId, searchParams.proId]);
-
-
+  console.log(searchParams);
   return (
     <>
       <Navbar />
@@ -47,13 +48,11 @@ function Details({ searchParams }) {
               <div className="flex justify-between items-center">
                 <p className="mt-2">${detailsPro?.price}</p>
               </div>
-            
             </div>
-
           </div>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

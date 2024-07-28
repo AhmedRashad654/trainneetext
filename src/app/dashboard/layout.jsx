@@ -4,9 +4,7 @@ import SideBarDashboard from "./@sidebar/page";
 export default function RootLayout({ children }) {
   return (
     <>
-      {typeof window !== "undefined" && (
-        <ToastContainer position="top-center" />
-      )}
+      <ToastContainer position="top-center" />
       <div>
         <div className="">
           <div>
