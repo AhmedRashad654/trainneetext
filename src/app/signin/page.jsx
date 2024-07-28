@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
-
 import { ContextUser } from "../../../context/ContextSendMessage";
 import { toast, ToastContainer } from "react-toastify";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -29,7 +28,9 @@ export default function SignIn() {
 
   return (
     <>
-      <ToastContainer position="top-center" />
+    
+        <ToastContainer position="top-center" />
+    
       <div className="w-full bg-main h-[calc(85vh)] rounded-br-[25%] relative p-5 text-white">
         <h1 className="p-1 translate-y-2  text-[1.5rem] font-bold">Sign In</h1>
         <div className="absolute top-[50%] translate-y-[-60%] flex flex-col gap-7 pr-10">
@@ -60,7 +61,13 @@ export default function SignIn() {
           </button>
         </div>
         <p className="text-[12px] ml-2 mt-1">
-          Already have email ? <span className="text-red-300 cursor-pointer" onClick={()=>router.push("/login")}>Login</span>
+          Already have email ?{" "}
+          <span
+            className="text-red-300 cursor-pointer"
+            onClick={() => router.push("/login")}
+          >
+            Login
+          </span>
         </p>
       </div>
     </>

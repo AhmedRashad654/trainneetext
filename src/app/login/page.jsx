@@ -34,6 +34,7 @@ export default function Login() {
   return (
     <>
       <ToastContainer position="top-center" />
+
       <div className="w-full bg-main h-[calc(85vh)] rounded-br-[25%] relative p-5 text-white">
         <div className="flex items-center gap-2 translate-y-2">
           <FaArrowLeftLong

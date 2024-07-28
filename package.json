@@ -17,6 +17,7 @@
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.5",
     "scrollreveal": "^4.0.9",
+    "sharp": "^0.33.4",
     "slick-carousel": "^1.8.1",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.12.3"

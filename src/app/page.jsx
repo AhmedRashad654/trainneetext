@@ -1,29 +1,10 @@
-"use client";
 import Image from "next/image";
 import BackHeader from "../../public/assets/pngtree-digital-retailing-illustration-laptop-keyboard-with-shopping-basket-and-e-commerce-image_3903657.jpg";
 import Navbar from "./_componant/Navbar";
-import ScrollReveal from "scrollreveal";
 import HeaderCategory from "./_componant/HeaderCategory";
 import Products from "./_componant/Product";
 import Footer from "./_componant/Footer";
-import { useEffect } from "react";
 export default function Home() {
-    useEffect(() => {
-      const scrollRevealOption = {
-        distance: "50px",
-        origin: "top",
-        duration: 1000,
-      };
-      ScrollReveal().reveal(".mainHead h1", { ...scrollRevealOption });
-      ScrollReveal().reveal(".mainHead h2", {
-        ...scrollRevealOption,
-        delay: 500,
-      });
- ScrollReveal().reveal(".insidetext", {
-      ...scrollRevealOption,
-      delay: 1000,
-    });
-    }, []);
   return (
     <>
       <div className="w-full h-screen relative">
