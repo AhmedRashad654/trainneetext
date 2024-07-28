@@ -5,7 +5,7 @@ import { db } from "../../../config";
 import Image from "next/image";
 import Navbar from "../_componant/Navbar";
 import Footer from "../_componant/Footer";
-function Details({ searchParams }) {
+export default function Details({ searchParams }) {
   const [detailsPro, setDetailsPro] = useState();
   useEffect(() => {
     if (searchParams?.catId && searchParams?.proId) {
@@ -57,4 +57,3 @@ function Details({ searchParams }) {
   );
 }
 
-export default Details;
