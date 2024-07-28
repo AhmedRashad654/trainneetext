@@ -1,3 +1,4 @@
+"use client"
 import React, { useContext } from "react";
 import Image from "next/image";
 import { ContextUser } from "../../../context/ContextSendMessage";
@@ -13,7 +14,7 @@ export default function HeaderCategory() {
       </div>
       <div className=" my-5 flex flex-wrap gap-[100px] p-5 w-full justify-center">
         {category &&
-          category.map((cat, index) => (
+          category.map((cat) => (
             <div
               className="cursor-pointer flex flex-col items-center w-[100px] text-center"
               key={cat?.id}
