@@ -1,28 +1,28 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../../config";
+import { db } from "../../../../config";
 import Image from "next/image";
-import Navbar from "../_componant/Navbar";
-import Footer from "../_componant/Footer";
-export default function Details({ searchParams }) {
+import Navbar from "../../_componant/Navbar";
+import Footer from "../../_componant/Footer";
+export default function Details({params ,searchParams }) {
   const [detailsPro, setDetailsPro] = useState();
   useEffect(() => {
-    if (searchParams?.catId && searchParams?.proId) {
+    if (searchParams?.catId && params?.proId) {
       async function getDetails() {
         const refPro = doc(
           db,
           "category",
           searchParams.catId,
           "product",
-          searchParams.proId
+          params.proId
         );
         const docRef = await getDoc(refPro);
         setDetailsPro(docRef.data());
       }
       getDetails();
     }
-  }, [searchParams.catId, searchParams.proId]);
+  }, [searchParams.catId, params.proId]);
   console.log(searchParams);
   return (
     <>

@@ -36,7 +36,7 @@ function Products() {
                 className="p-1 bg-red-600 font-bold w-full mt-2 rounded-md cursor-pointer hover:bg-red-500"
                 onClick={() =>
                   router.push(
-                    `/productdetails?catId=${product.categoryId}&&proId=${product.id}`
+                    `/productdetails/${product.id}?catId=${product.categoryId}`
                   )
                 }
               >
